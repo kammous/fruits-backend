@@ -1,0 +1,9 @@
+version: '2'
+services:
+  fruits-frontend:
+    image: fruits-frontend
+    environment:
+      - BACKEND_SERVICE=http://localhost:8080
+      # - PORT=4200
+    ports:
+      - 8082:80

@@ -1,0 +1,17 @@
+version: '2'
+services:
+  fruits-backend:
+    image: fruits-backend
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/sampledb
+    ports:
+      - 8080:8080
+  mongo:
+    extends:
+      file: mongo.yml
+      service: mongo
+  fruits-frontend:
+    extends:
+      file: frontend.yml
+      service: fruits-frontend
